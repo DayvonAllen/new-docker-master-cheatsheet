@@ -82,7 +82,7 @@
 - `docker network ls` - list all created networks.
 - `docker network inspect <network_name>` - inspect a network
   - `docker network inspect bridge`
-- `docker network create <network_name>` - create a network.
+- `docker network create <network_name>`(default driver is bridge) - create a network.
   - `docker network create --driver <driver> <network_name>` - can optionally specify the driver.
 - `docker network create --help`
 - `docker container run -d --name <container_name> --network <network_name> <image>` - create a container in a certain network
