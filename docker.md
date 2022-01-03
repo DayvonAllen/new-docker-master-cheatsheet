@@ -66,3 +66,15 @@ hyper-localized runtime environment (the contents of the container).
   - `docker image tag <prev_image_name> <DH_username>/<image_name>:<tag_name>`
     - `docker image push <image>:<tag_name>` - push to DH when tag is specified.
 ---
+    
+## Persistent Data
+- Two ways to persist data:
+  - `Volumes`:
+    - Makes a special location outside of the container's unique file system to save unique data.
+    - Keeps data past container removal and allows us to attach this data to any container we want.
+    - `VOLUME <PATH_TO_VOLUME_LOCATION>` - How to create and assign a new volume to this container(for `Dockerfile`).
+    - Volumes need manual deletions.
+  - `Bind Mounts`:
+    - link container path to host path.
+    - sharing or mounting a hosted directory or file to a container.
+---
