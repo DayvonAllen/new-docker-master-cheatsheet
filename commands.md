@@ -93,6 +93,7 @@
 
 ## Docker Networks: DNS and How Containers Find Each Other
 - We just specify the container names to communicate in the same Virtual Network.
+- When using the default network the containers cannot communicate by default, but they can when you create your own network(should create your own network, good practice)
 - `docker container ls`
 - `docker network inspect TAB COMPLETION`
 - `docker container run -d --name my_nginx --network my_app_net nginx`
@@ -113,8 +114,11 @@
 ## Assignment Answers: DNS Round Robin Testing
 - `docker network create dude`
 - `docker container run -d --net dude --net-alias search elasticsearch:2`
+  - `--network-alias` or `-net-alias` - lets you create a network alias, so more than one container handle requests the same requests
+    - used for horizontal scaling, only one container can have a certain name, so we use this to make sure multiple
+    - containers can handle the same traffic.
 - `docker container ls`
-- `docker container run --rm -- net dude alpine nslookup search`
+- `docker container run --rm --net dude alpine nslookup search`
 - `docker container run --rm --net dude centos curl -s search:9200`
 - `docker container ls`
 - `docker container rm -f TAB COMPLETION`
