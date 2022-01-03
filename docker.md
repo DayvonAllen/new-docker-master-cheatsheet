@@ -26,6 +26,11 @@ hyper-localized runtime environment (the contents of the container).
 ## Container
 - is an instance of an image running as a process.
 - you can have many containers based off the same image.
+- containers are:
+  - just processes running on a host operating system.
+  - limited to what resources they can access.
+  - exit when the process stops.
+  - not virtual machines.
 ---
 
 ## Image

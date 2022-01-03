@@ -2,35 +2,25 @@
 # Creating and Using Containers Like a Boss
 
 ## Starting a Nginx Web Server
-- `docker container run --publish 80:80 nginx`
-- `docker container run --publish 80:80 --detach nginx`
-- `docker container ls`
-- `docker container stop 690`
-- `docker container ls`
-- `docker container ls -a`
+- `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
+- `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode.
+- `docker container stop <container ID>` - stops a container
+- `docker container ls` - list docker containers
+- `docker container ls -a ` - lists all docker containers.
 - `docker container run --publish 80:80 --detach --name webhost nginx`
-- `docker container ls -a`
-- `docker container logs webhost`
-- `docker container top`
-- `docker container top webhost`
-- `docker container --help`
-- `docker container ls -a`
-- `docker container rm 63f 690 ode`
-- `docker container ls`
-- `docker container rm -f 63f`
-- `docker container ls -a`
+- `docker container logs <container name>` - get logs for container
+- `docker container top <container name>` - list the processes running in a certain container.
+- `docker container --help` - gives list of commands.
+- `docker container rm 63f 690 ode` - removes containers.
+  - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'`
 ---
 
 ## Container VS. VM: It's Just a Process
-- `docker run --name mongo -d mongo`
-- `docker ps`
+- `docker run --name mongo -d mongo` - names a container `mongo` while using the `mongo` image.
 - `docker top mongo`
-- `docker stop mongo`
-- `docker ps`
-- `docker top mongo`
-- `docker start mongo`
-- `docker ps`
-- `docker top mongo`
+- `docker stop mongo` - stops a container named `mongo`.
+- `docker ps` - list containers
+- `docker start mongo` - start a container named `mongo`.
 ---
 
 ## Assignment Answers: Manage Multiple Containers
