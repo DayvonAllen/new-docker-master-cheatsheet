@@ -17,6 +17,7 @@
 - `docker system prune` -  will clean up everything.
 - `docker image prune -a` - will remove all images you're not using.
 - `docker system df` - shows disk usage.
+- `docker history <image>` - shows the layers of changes made in an image.
 - Volumes:
   - `docker volume rm <volume_name>` - remove local volume
   - `docker volume create` - create volume

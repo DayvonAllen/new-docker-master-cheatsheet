@@ -54,3 +54,15 @@ hyper-localized runtime environment (the contents of the container).
 - Containers in the same virtual network can find each other by specifying each other's container name.
 - The DNS will automatically resolve their names to an IP, and they will be able to communicate.
 ---
+
+## How To Push To Docker Hub(DH)
+- `Tag` - a pointer to specific image commit(kinda like a version).
+- `docker login`
+- `docker logout`
+- `docker image tag <image> <DH_username>/<image_name>` - creates a repository with the latest tag from an image.
+  - `docker image push <image>` - push to DH when no tag name is specified.
+- How to create a repository with a `tag` for a custom image:
+  - If you don't specify a tag it will default to `latest`
+  - `docker image tag <image> <DH_username>/<image_name>:<tag_name>`
+    - `docker image push <image>:<tag_name>` - push to DH when tag is specified.
+---
