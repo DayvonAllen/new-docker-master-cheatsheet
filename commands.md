@@ -92,6 +92,7 @@
 ---
 
 ## Docker Networks: DNS and How Containers Find Each Other
+- We just specify the container names to communicate in the same Virtual Network.
 - `docker container ls`
 - `docker network inspect TAB COMPLETION`
 - `docker container run -d --name my_nginx --network my_app_net nginx`

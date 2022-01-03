@@ -47,4 +47,6 @@ hyper-localized runtime environment (the contents of the container).
 - We can attach containers to more than one virtual network(or none).
 - We can skip default virtual network configuration and use the host IP with this option(`--net=host`).
 - We can use different docker network drivers to gain new abilities.
+- Containers in the same virtual network can find each other by specifying each other's container name.
+- The DNS will automatically resolve their names to an IP, and they will be able to communicate.
 ---
