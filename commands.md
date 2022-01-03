@@ -13,6 +13,15 @@
 - `docker container --help` - gives list of commands.
 - `docker container rm 63f 690 ode` - removes containers.
   - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'`
+- `docker image prune` - to clean up just "dangling" images.
+- `docker system prune` -  will clean up everything.
+- `docker image prune -a` - will remove all images you're not using.
+- `docker system df` - shows disk usage.
+- `docker volume rm <volume_name>` - remove local volume
+- `docker volume create` - create volume
+- `docker volume inspect` - inspect
+- `docker volume ls` - list volumes
+- `docker volume prune` - removes all unused volumes.
 ---
 
 ## Pass Environment Variables Into A Container:
