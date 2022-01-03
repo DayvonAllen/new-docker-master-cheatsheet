@@ -59,10 +59,10 @@ hyper-localized runtime environment (the contents of the container).
 - `Tag` - a pointer to specific image commit(kinda like a version).
 - `docker login`
 - `docker logout`
-- `docker image tag <image> <DH_username>/<image_name>` - creates a repository with the latest tag from an image.
+- `docker image tag <prev_image_name> <DH_username>/<image_name>`(tag will default to latest) - rename an image.
   - `docker image push <image>` - push to DH when no tag name is specified.
-- How to create a repository with a `tag` for a custom image:
+- How to name an image with a `tag` for a custom image:
   - If you don't specify a tag it will default to `latest`
-  - `docker image tag <image> <DH_username>/<image_name>:<tag_name>`
+  - `docker image tag <prev_image_name> <DH_username>/<image_name>:<tag_name>`
     - `docker image push <image>:<tag_name>` - push to DH when tag is specified.
 ---

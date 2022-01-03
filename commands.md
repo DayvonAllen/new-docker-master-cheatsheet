@@ -4,6 +4,7 @@
 ## Starting a Nginx Web Server
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
 - `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode.
+- `docker container run --rm <image>` - will delete this container once it stops running.
 - `docker container stop <container ID>` - stops a container
 - `docker container ls` - list only running containers
 - `docker container ls -a ` - lists all docker containers.
@@ -14,10 +15,14 @@
 - `docker container rm 63f 690 ode` - removes containers.
   - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'`
 - `docker image prune` - to clean up just "dangling" images.
+- `docker images` - shows docker images
 - `docker system prune` -  will clean up everything.
 - `docker image prune -a` - will remove all images you're not using.
 - `docker system df` - shows disk usage.
 - `docker history <image>` - shows the layers of changes made in an image.
+- `docker build -f <other_dockerfile>` - allows you to build a dockerfile that's not the default `Dockerfile`
+- `docker image build -t <DH_username>/<image_name>:<optional_tag_name> <path_to_Dockerfile>` - build `Dockerfile` to an image.
+  - `docker image build -t <DH_username>/<image_name> <path_to_Dockerfile>` - build `Dockerfile` to an image with `latest` tag name.
 - Volumes:
   - `docker volume rm <volume_name>` - remove local volume
   - `docker volume create` - create volume
