@@ -38,3 +38,13 @@ hyper-localized runtime environment (the contents of the container).
 - We get all of our images from registries, the default docker registry is `Docker Hub`.
   - `Docker Hub` - a registry for docker images, does what `github` does for source code but for docker images.
 ---
+  
+## Docker Network
+- Each container is connected to a private virtual network `bridge`.
+- Each virtual network routes through an NAT firewall on the host's IP.
+- All containers on a virtual network can talk to each other without `-p` or `--publish`.
+- We can make new virtual networks.
+- We can attach containers to more than one virtual network(or none).
+- We can skip default virtual network configuration and use the host IP with this option(`--net=host`).
+- We can use different docker network drivers to gain new abilities.
+---

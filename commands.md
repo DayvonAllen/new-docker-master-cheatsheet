@@ -38,13 +38,9 @@
 - `docker container run -d --name webserver -p 8080:80 httpd`
 - `docker ps`
 - `docker container run -d --name proxy -p 80:80 nginx`
-- `docker ps`
-- `docker container ls`
 - `docker container stop TAB COMPLETION`
-- `docker ps -a`
 - `docker container ls -a`
 - `docker container rm`
-- `docker ps -a`
 - `docker image ls`
 ---
 
@@ -85,9 +81,7 @@
 ## Docker Networks: CLI Management of Virtual Networks
 - `docker network ls`
 - `docker network inspect bridge`
-- `docker network ls`
 - `docker network create my_app_net`
-- `docker network ls`
 - `docker network create --help`
 - `docker container run -d --name new_nginx --network my_app_net nginx`
 - `docker network inspect my_app_net`
