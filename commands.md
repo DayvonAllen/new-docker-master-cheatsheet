@@ -17,11 +17,13 @@
 - `docker system prune` -  will clean up everything.
 - `docker image prune -a` - will remove all images you're not using.
 - `docker system df` - shows disk usage.
-- `docker volume rm <volume_name>` - remove local volume
-- `docker volume create` - create volume
-- `docker volume inspect` - inspect
-- `docker volume ls` - list volumes
-- `docker volume prune` - removes all unused volumes.
+- Volumes:
+  - `docker volume rm <volume_name>` - remove local volume
+  - `docker volume create` - create volume
+  - `docker volume inspect` - inspect
+  - `docker volume ls` - list volumes
+  - `docker volume prune` - removes all unused volumes.
+  - `-f` - optionally flag which means force.
 ---
 
 ## Pass Environment Variables Into A Container:
