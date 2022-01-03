@@ -5,6 +5,7 @@
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
 - `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode.
 - `docker container run --rm <image>` - will delete this container once it stops running.
+- `docker container run -v <volume_name>:<path_to_where_volume_should_be _created> <image>` - creates named volume.
 - `docker container stop <container ID>` - stops a container
 - `docker container ls` - list only running containers
 - `docker container ls -a ` - lists all docker containers.
