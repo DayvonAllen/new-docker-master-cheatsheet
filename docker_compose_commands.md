@@ -32,6 +32,8 @@
 - `docker image ls`
 - `docker-compose down --help`
 - `docker-compose down --rmi local`
+---
+
 ## Assignment Answers: Compose for Run-Time Image Building and Multi-Container Dev
 `docker-compose up`
 `docker-compose down`
