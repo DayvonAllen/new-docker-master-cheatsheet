@@ -5,7 +5,7 @@
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
 - `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode.
 - `docker container stop <container ID>` - stops a container
-- `docker container ls` - list docker containers
+- `docker container ls` - list only running containers
 - `docker container ls -a ` - lists all docker containers.
 - `docker container run --publish 80:80 --detach --name webhost nginx`
 - `docker container logs <container name>` - get logs for container
@@ -15,16 +15,25 @@
   - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'`
 ---
 
+## Pass Environment Variables Into A Container:
+- `-e` or `--env` - will allow you to pass environment variables into a container.
+  - `docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes MYSQL_RANDOM_ROOT_PASSWORD mysql`
+    - Will generate a random root password for mySQL, must use `docker container logs <mySQL_container_name>` to get the 
+    - randomly generated password.
+---
+  
 ## Container VS. VM: It's Just a Process
 - `docker run --name mongo -d mongo` - names a container `mongo` while using the `mongo` image.
-- `docker top mongo`
+  - If you don't give a container a name, docker will automatically generate a random name for the container.
+- `docker top mongo` - list the processes running in a container named `mongo`.
 - `docker stop mongo` - stops a container named `mongo`.
-- `docker ps` - list containers
+- `docker ps` - list only running containers
+- `docker ps -a` - list all containers
 - `docker start mongo` - start a container named `mongo`.
 ---
 
 ## Assignment Answers: Manage Multiple Containers
-- `docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes MYSQL_RANDOM_ROOT_PASSWORD`
+- `docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes MYSQL_RANDOM_ROOT_PASSWORD mysql`
 - `docker container logs db`
 - `docker container run -d --name webserver -p 8080:80 httpd`
 - `docker ps`
