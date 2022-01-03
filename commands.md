@@ -54,27 +54,24 @@
 - `docker container ls`
 - `docker container top mysql`
 - `docker container top nginx`
-- `docker container inspect mysql`
+- `docker container inspect <container_name>` - gets details of specified container config.
 - `docker container stats --help`
-- `docker container stats`
-- `docker container ls`
+- `docker container stats` - get performance stats for all containers
 ---
 
 ## Getting a Shell Inside Containers: No Need for SSH
 - `docker container run -help`
-- `docker container run -it --name proxy nginx bash`
+- `docker container run -it --name proxy <container_name> bash` - start a container interactively with a bash shell inside the container
 - `docker container ls`
 - `docker container ls -a`
 - `docker container run -it --name ubuntu ubuntu`
-- `docker container ls`
-- `docker container ls -a`
 - `docker container start --help`
 - `docker container start -ai ubuntu`
 - `docker container exec --help`
-- `docker container exec -it mysql bash`
-- `docker container ls`
+- `docker container exec -it mysql bash` - run additional command in existing container, in this case `bash`, so we can
+  - get a shell inside the container.
 - `docker pull alpine`
-- `docker image ls`
+- `docker image ls` - list docker images on host machine.
 - `docker container run -it alpine bash`
 - `docker container run -it alpine sh`
 ---
