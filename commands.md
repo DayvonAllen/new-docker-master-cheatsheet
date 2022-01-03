@@ -114,7 +114,7 @@
 ## Assignment Answers: DNS Round Robin Testing
 - `docker network create dude`
 - `docker container run -d --net dude --net-alias search elasticsearch:2`
-  - `--network-alias` or `-net-alias` - lets you create a network alias, so more than one container handle requests the same requests
+  - `--network-alias` or `--net-alias` - lets you create a network alias, so more than one container handle requests the same requests
     - used for horizontal scaling, only one container can have a certain name, so we use this to make sure multiple
     - containers can handle the same traffic.
 - `docker container ls`
