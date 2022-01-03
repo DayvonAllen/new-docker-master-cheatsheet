@@ -1,7 +1,7 @@
 
 # Creating and Using Containers Like a Boss
 
-## Starting a Nginx Web Server
+## Basic Commands
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
 - `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode.
 - `docker container run --rm <image>` - will delete this container once it stops running.
