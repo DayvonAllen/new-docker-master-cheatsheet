@@ -74,22 +74,21 @@
 
 ## Docker Networks: Concepts for Private and Public Comms in Containers
 - `docker container run -p 80:80 --name webhost -d nginx`
-- `docker container port webhost`
-- `docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost`
+- `docker container port <container_name>` - check which ports are exposed for a certain running container.
+- `docker container inspect --format '{{ .NetworkSettings.IPAddress }}' <container_name>` - get IP for a certain container.
 ---
 
 ## Docker Networks: CLI Management of Virtual Networks
-- `docker network ls`
-- `docker network inspect bridge`
-- `docker network create my_app_net`
+- `docker network ls` - list all created networks.
+- `docker network inspect <network_name>` - inspect a network
+  - `docker network inspect bridge`
+- `docker network create <network_name>` - create a network.
+  - `docker network create --driver <driver> <network_name>` - can optionally specify the driver.
 - `docker network create --help`
-- `docker container run -d --name new_nginx --network my_app_net nginx`
-- `docker network inspect my_app_net`
-- `docker network --help`
-- `docker network connect`
-- `docker container inspect TAB COMPLETION`
-- `docker container disconnect TAB COMPLETION`
-- `docker container inspect`
+- `docker container run -d --name <container_name> --network <network_name> <image>` - create a container in a certain network
+- `docker network connect` - attach a network to a container.
+- `docker network disconnect` - detach a network from a container.
+- `docker container disconnect`
 ---
 
 ## Docker Networks: DNS and How Containers Find Each Other
@@ -108,7 +107,7 @@
 - `docker ps -a`
 - `docker container run --rm -it ubuntu:14.04 bash`
 - `docker ps -a`
---
+---
 
 ## Assignment Answers: DNS Round Robin Testing
 - `docker network create dude`
