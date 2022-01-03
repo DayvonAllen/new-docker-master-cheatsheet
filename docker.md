@@ -74,7 +74,7 @@ hyper-localized runtime environment (the contents of the container).
     - Keeps data past container removal and allows us to attach this data to any container we want.
     - `VOLUME <PATH_TO_VOLUME_LOCATION>` - How to create and assign a new volume to this container(for `Dockerfile`).
     - Volumes need manual deletions.
-  - `Bind Mounts`:
+  - `Bind Mounts`(can't use in `Dockerfile`):
     - link container path to host path.
     - sharing or mounting a hosted directory or file to a container.
 ---
