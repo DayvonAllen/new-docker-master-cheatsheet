@@ -34,7 +34,11 @@ hyper-localized runtime environment (the contents of the container).
 ---
 
 ## Image
-- The binary and the source code that makes up your application
+- It's the App binaries and dependencies of your app.
+  - It's also the metadata about the image data and how to run the image.
+  - Does not include a kernel, or kernel modules(e.g. drivers).
+  - The host provides the kernel.
+  - It's not a complete OS.
 - We get all of our images from registries, the default docker registry is `Docker Hub`.
   - `Docker Hub` - a registry for docker images, does what `github` does for source code but for docker images.
 ---
