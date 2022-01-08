@@ -25,6 +25,7 @@ services:
       - /app/node_modules
     env_file: 
       - ./env/backend.env
+      # specifies that mongodb should be running before running this container
     depends_on:
       - mongodb
   frontend:
@@ -35,9 +36,11 @@ services:
       - ./frontend/src:/app/src
     stdin_open: true
     tty: true
+    # specifies that backend should be running before running this container
     depends_on: 
       - backend
 
+# named volumes used above must be specified here
 volumes: 
   data:
   logs:
