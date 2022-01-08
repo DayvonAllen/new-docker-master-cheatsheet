@@ -67,6 +67,8 @@ app.get('/people', async (req, res) => {
   }
 });
 
+// mongodb, is the other container's name.
+// this app can talk to a container named "mongodb" if both containers are on the same network by using the container's name
 mongoose.connect(
   'mongodb://mongodb:27017/swfavorites',
   { useNewUrlParser: true },

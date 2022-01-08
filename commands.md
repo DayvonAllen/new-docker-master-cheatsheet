@@ -59,6 +59,10 @@
   - `docker volume ls` - list volumes
   - `docker volume prune` - removes all unused volumes.
   - `-f` - optionally flag which means force.
+- Network:
+  - `docker network create <name>` - creates a docker internal network that allows containers to talk to each other if they are on the same network.
+  - `docker network ls`
+  - `docker run -d --name <name> --network <network_name> <image>` - attaches a network that already exists to your container.
 ---
 
 ## Pass Environment Variables Into A Container:
