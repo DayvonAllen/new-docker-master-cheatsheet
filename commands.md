@@ -1,8 +1,12 @@
 
 # Creating and Using Containers Like a Boss
 
+# Should Always Give Containers Names!!!
+
 ## Basic Commands
 - `docker container run <image_name>` - creates a new container in attached mode(means we are listening for output, like logs from the container)
+- `docker container attach <container_name>` - attaches to a detached running container.
+  - `docker attach <container_name>` - attaches to a detached running container.
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
 - `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode(means we are not listening to the output).
 - `docker container run --rm <image>` - will delete this container once it stops running.
@@ -11,15 +15,23 @@
 - `docker container ls` - list only running containers
 - `docker container ls -a ` - lists all docker containers.
 - `docker container start <container_name>` - restarts a stopped container.
+  - `docker start -a <container_name>` - starts a container in attached mode
 - `docker container stop <container_name>` - stops a container.
 - `docker container run --publish 80:80 --detach --name webhost nginx` - `--name` will give the container a name.
 - `docker container logs <container name>` - get logs for container
+  - `docker container logs -f <container name>` - enables follow mode, which will gets previously printed logs and attach to the container to continue getting logs.
 - `docker container top <container name>` - list the processes running in a certain container.
 - `docker container --help` - gives list of commands.
 - `docker container rm 63f 690 ode` - removes containers.
   - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'`
 - `docker image prune` - to clean up just "dangling" images.
 - `docker images` - shows docker images
+- `docker stats <container_name>` - shows how many resources a container is using
+- `docker rmi <image_name>` - removes images
+- `docker port <container_name>` - lists container's port mappings.
+- `docker pause <container_name>` - pause all processes within a container.
+- `docker inspect <container_name>` - returns low level information on docker objects(config info, ports and stuff like that).
+- `docker kill <container_name>` - kill a container, doesn't wait for graceful shutdown.
 - `docker system prune` -  will clean up everything.
 - `docker image prune -a` - will remove all images you're not using.
 - `docker system df` - shows disk usage.
