@@ -68,6 +68,7 @@
     - Will generate a random root password for mySQL, must use `docker container logs <mySQL_container_name>` to get the 
     - randomly generated password.
 - `--env-file <path_to_.env_file` - set env variables with a `.env` file. 
+- `--build-arg <key(arg)>=<value>` - use to pass in build argument that will be used in your `Dockerfile` to build the image.
 ---
   
 ## Container VS. VM: It's Just a Process
