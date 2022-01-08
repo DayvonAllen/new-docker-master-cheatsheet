@@ -17,6 +17,8 @@
 - `docker container run --rm <image>` - will delete this container once it stops running.
 - `docker container run -v <volume_name>:<path_to_where_volume_should_be_created> <image>` - creates named volume.
 - `docker container run -v <volume_name>:<path_to_where_volume_should_be_created_on_host_machine>  -v <absolute_path_on_host_machine_that_has_persistent_data>:<path_to_where_volume_should_be _created_in_container> <image>` - creates a bind mount.
+  - `-v $(pwd):<container_path>` - shortcut for mac/linux
+  - `-v "%cd%":/<container_path>` - shortcut for window
 - `docker container stop <container ID>` - stops a container
 - `docker container ls` - list only running containers
 - `docker container ls -a ` - lists all docker containers.
