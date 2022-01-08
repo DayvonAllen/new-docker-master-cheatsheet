@@ -5,6 +5,7 @@
 
 ## Basic Commands
 - `docker container run <image_name>` - creates a new container in attached mode(means we are listening for output, like logs from the container)
+  - `docker container run --name <container_name> <image_name>` - creates a new container with a name in attached mode(means we are listening for output, like logs from the container)
 - `docker container attach <container_name>` - attaches to a detached running container.
   - `docker attach <container_name>` - attaches to a detached running container.
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
