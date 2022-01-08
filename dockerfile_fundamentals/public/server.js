@@ -36,6 +36,10 @@ app.get('/', (req, res) => {
   `);
 });
 
+app.get("/test", (req, res) => {
+  res.json({message: "test message"})
+})
+
 app.post('/store-goal', (req, res) => {
   const enteredGoal = req.body.goal;
   console.log(enteredGoal);
