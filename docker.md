@@ -94,12 +94,12 @@ hyper-localized runtime environment (the contents of the container).
 
 ## Volumes
 - they are folders on your host machine hard drive which are mounted(`made available`, mapped) into containers.
-  - folders which you make docker aware of then mapped to a directory in a docker container, saves all data on your computer not in the container(for persistent data).
+  - folders which you make docker aware of then mapped to a directory in a docker container, saves all data on your computer not in the container(for persistent data, not editable data).
 - Two Type if Exterbak Data Storages:
-  - `Volumes` - managed by docker.
+  - `Volumes` - managed by docker and we don't know where docker puts them on our host machine
     - `Anonymous volumes` - name is generated automatically, only exists as long as our container exists.
       - docker deletes theses volumes.
     - `Named volumes` - We give the volume a name, volumes will survive container shutdown(good for persistence of data)
       - docker doesn't deletes theses volumes.
-  - `Bind Mounts` - managed by us.
+  - `Bind Mounts` - managed by us, we set the path for where the container volume should be(great for persistent, editable data(ex. changing source code for dev purposes)).
 ---
