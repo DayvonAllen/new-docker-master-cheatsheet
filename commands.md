@@ -30,6 +30,7 @@
 - `docker container rm 63f 690 ode` - removes containers.
   - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'` 
 - `docker image prune` - to clean up just "dangling" images.
+- `docker image inspect <image_id>` - gives a lot of information about an image.
 - `docker images` - shows docker images
 - `docker stats <container_name>` - shows how many resources a container is using
 - `docker rmi <image_ID>` - removes images(all containers using that image must be stopped and removed first before this command works)
@@ -46,8 +47,8 @@
   - `docker image build -t <DH_username>/<image_name> <path_to_Dockerfile>` - build `Dockerfile` to an image with `latest` tag name.
 - Volumes:
   - `docker volume rm <volume_name>` - remove local volume
-  - `docker volume create` - create volume
-  - `docker volume inspect` - inspect
+  - `docker volume create <volume_name>` - create volume
+  - `docker volume inspect <volume_name>` - gives a lot of information about a volume.
   - `docker volume ls` - list volumes
   - `docker volume prune` - removes all unused volumes.
   - `-f` - optionally flag which means force.
