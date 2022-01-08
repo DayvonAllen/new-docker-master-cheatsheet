@@ -6,6 +6,7 @@
 ## Basic Commands
 - `docker container run <image_name>` - creates a new container in attached mode(means we are listening for output, like logs from the container)
   - `docker container run --name <container_name> <image_name>` - creates a new container with a name in attached mode(means we are listening for output, like logs from the container).
+  - `docker container run --name <container_name> -v <volume_name>:<container_path_to_save_data_to> <image_name>` - `-v` allows you to attach a named `volume`.
   - `docker container run --name <container_name> --rm <image_name>` - this removes the container when it exits or stops because of the `--rm` flag.
   - `docker container run -it --name <container_name> <image_name> bash` - `-i` for interactive mode(for input), `-t` gives you a pseudo terminal, `bash` lets us get a bash shell in the container.
   - `docker exec -it <container_name> bash` - let's us execute bash commands in a running container.
