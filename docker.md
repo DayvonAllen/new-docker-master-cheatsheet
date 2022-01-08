@@ -26,11 +26,16 @@ hyper-localized runtime environment (the contents of the container).
 ## Container
 - is an instance of an image running as a process.
 - you can have many containers based off the same image.
+- is your running application, built from the image.
+- it's an isolated unit of software which is based on an image. 
+  - A running instance of that image.
 - containers are:
   - just processes running on a host operating system.
   - limited to what resources they can access.
   - exit when the process stops.
   - not virtual machines.
+- Multiple containers can be based on the same image without interrupting each other.
+- Containers are separated from each other and have no shared data or state by default(This is `isolation`). 
 ---
 
 ## Image
@@ -39,6 +44,7 @@ hyper-localized runtime environment (the contents of the container).
   - Does not include a kernel, or kernel modules(e.g. drivers).
   - The host provides the kernel.
   - It's not a complete OS.
+- Images are `blueprints` for containers which then are running instances with read and write access. 
 - We get all of our images from registries, the default docker registry is `Docker Hub`.
   - `Docker Hub` - a registry for docker images, does what `github` does for source code but for docker images.
 - They are read-only and containers execute them. 

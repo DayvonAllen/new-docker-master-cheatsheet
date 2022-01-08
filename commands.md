@@ -2,14 +2,17 @@
 # Creating and Using Containers Like a Boss
 
 ## Basic Commands
+- `docker container run <image_name>` - creates a new container in attached mode(means we are listening for output, like logs from the container)
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
-- `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode.
+- `docker container run --publish 80:80 --detach nginx` - same as above but in detached mode(means we are not listening to the output).
 - `docker container run --rm <image>` - will delete this container once it stops running.
 - `docker container run -v <volume_name>:<path_to_where_volume_should_be _created> <image>` - creates named volume.
 - `docker container stop <container ID>` - stops a container
 - `docker container ls` - list only running containers
 - `docker container ls -a ` - lists all docker containers.
-- `docker container run --publish 80:80 --detach --name webhost nginx`
+- `docker container start <container_name>` - restarts a stopped container.
+- `docker container stop <container_name>` - stops a container.
+- `docker container run --publish 80:80 --detach --name webhost nginx` - `--name` will give the container a name.
 - `docker container logs <container name>` - get logs for container
 - `docker container top <container name>` - list the processes running in a certain container.
 - `docker container --help` - gives list of commands.
