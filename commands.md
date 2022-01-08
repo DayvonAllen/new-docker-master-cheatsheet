@@ -17,6 +17,7 @@
 - `docker container run --rm <image>` - will delete this container once it stops running.
 - `docker container run -v <volume_name>:<path_to_where_volume_should_be_created> <image>` - creates named volume.
 - `docker container run -v <volume_name>:<path_to_where_volume_should_be_created_on_host_machine>  -v <absolute_path_on_host_machine_that_has_persistent_data>:<path_to_where_volume_should_be _created_in_container> <image>` - creates a bind mount.
+  - `docker container run -v "<volume_name>:<path_to_where_volume_should_be_created_on_host_machine>"  -v "<absolute_path_on_host_machine_that_has_persistent_data>:<path_to_where_volume_should_be _created_in_container>:ro" <image>` - makes this `:ro` volume read only
   - `-v $(pwd):<container_path>` - shortcut for mac/linux
   - `-v "%cd%":/<container_path>` - shortcut for window
 - `docker container stop <container ID>` - stops a container
@@ -61,10 +62,12 @@
 ---
 
 ## Pass Environment Variables Into A Container:
-- `-e` or `--env` - will allow you to pass environment variables into a container.
+- `-e` or `--env` - will allow you to pass environment variables into a container when you build or run it.
   - `docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes MYSQL_RANDOM_ROOT_PASSWORD mysql`
+    - `-e` or `--env` for each environment variable you set, you have to prefix the variable with one of those flags
     - Will generate a random root password for mySQL, must use `docker container logs <mySQL_container_name>` to get the 
     - randomly generated password.
+- `--env-file <path_to_.env_file` - set env variables with a `.env` file. 
 ---
   
 ## Container VS. VM: It's Just a Process

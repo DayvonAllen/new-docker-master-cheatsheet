@@ -1,0 +1,4 @@
+# does not copy the node_modules folder to the container
+node_modules
+Dockerfile
+.git
