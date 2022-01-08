@@ -6,6 +6,8 @@
 ## Basic Commands
 - `docker container run <image_name>` - creates a new container in attached mode(means we are listening for output, like logs from the container)
   - `docker container run --name <container_name> <image_name>` - creates a new container with a name in attached mode(means we are listening for output, like logs from the container)
+  - `docker container run -it --name <container_name> <image_name> bash` - `-i` for interactive mode(for input), `-t` gives you a pseudo terminal, `bash` lets us get a bash shell in the container.
+  - `docker exec -it <container_name> bash` - let's us execute bash commands in a running container.
 - `docker container attach <container_name>` - attaches to a detached running container.
   - `docker attach <container_name>` - attaches to a detached running container.
 - `docker container run --publish 80:80 nginx` - run `nginx` server and port bind to port 80
@@ -24,7 +26,7 @@
 - `docker container top <container name>` - list the processes running in a certain container.
 - `docker container --help` - gives list of commands.
 - `docker container rm 63f 690 ode` - removes containers.
-  - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'`
+  - In the above case, 3 containers are removed by the first 3 characters of their `container IDs'` 
 - `docker image prune` - to clean up just "dangling" images.
 - `docker images` - shows docker images
 - `docker stats <container_name>` - shows how many resources a container is using
@@ -91,7 +93,7 @@
 
 ## Getting a Shell Inside Containers: No Need for SSH
 - `docker container run -help`
-- `docker container run -it --name proxy <container_name> bash` - start a container interactively with a bash shell inside the container
+- `docker container run -it --name proxy <image_name> bash` - start a container interactively with a bash shell inside the container
 - `docker container ls`
 - `docker container ls -a`
 - `docker container run -it --name ubuntu ubuntu`
