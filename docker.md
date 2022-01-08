@@ -49,7 +49,7 @@ hyper-localized runtime environment (the contents of the container).
   - `Docker Hub` - a registry for docker images, does what `github` does for source code but for docker images.
 - They are read-only and containers execute them. 
 - Every time we make a change we have to rebuild the image to get the changes to the image.
-- Images are layered based, docker will cache every instruction result and when you rebuild it will use these cached results if nothing has changed, this is called a `layer based architecture`, every instruction represents a layer.
+- Images are layered based, docker will cache every instruction result(using `SHA-256 hashes`) and when you rebuild it will use these cached results if nothing has changed, this is called a `layer based architecture`, every instruction represents a layer.
 - An image is built up based on these multiple layers(instructions, like `COPY`, `WORKDIR`, `RUN` etc.)
   - When you build or rebuild an image, only the instructions where something has changed and all of the instructions after are re-evaluated
     - For node apps, it's best to do `npm install` at the before copying your code in the `dockerfile` because if your code changes often and you have `npm install` before your code, that command will have to run everytime.

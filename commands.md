@@ -37,6 +37,8 @@
 - `docker port <container_name>` - lists container's port mappings.
 - `docker pause <container_name>` - pause all processes within a container.
 - `docker inspect <container_name>` - returns low level information on docker objects(config info, ports and stuff like that).
+- `docker cp <source_path or file> <container_name>:<path_in_container>` - will copy files or folders into a running docker container(path in docker container will be created if it doesn't exists yet).
+- `docker cp <container_name>:<path_in_container> <destination_path>` - copies files or directory from a running container into your local directory.
 - `docker kill <container_name>` - kill a container, doesn't wait for graceful shutdown.
 - `docker system prune` -  will clean up everything.
 - `docker image prune -a` - will remove all images you're not using.
